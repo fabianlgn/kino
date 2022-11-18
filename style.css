@@ -1,0 +1,638 @@
+/*-------------------navbar-------------*/
+
+
+
+/*____|Design (Farben/Schriftarten/häufig verwendete werte)|____________________________________________________________*/
+
+:root {
+    --backgound-color: #314453;
+    --darker-background-color: #243848;
+    --accent-color: #41DCE1;
+    --text-color: #FFFFFF;
+    --navbar-height: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+
+    margin-left: 0px;
+    background-color: gray;
+}
+.all {
+    display: flex;
+    justify-content: center;
+    
+}
+.save {
+    width: 50%;
+}
+
+/* .navigation  {
+
+    width: 100%;
+    height:var(--navbar-height);
+    position: fixed;
+}*/
+
+
+/*____|Überschriften (h1;h2;etc|_____________________________________________________________________________*/
+
+h2 {
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    ;
+    font-weight: 400;
+    font-variant: small-caps;
+    font-size: 43px;
+    padding-left: 10px;
+    border-left: 4px solid var(--backgound-color);
+}
+
+
+h3 {
+    color: black;
+
+    font-size: 17px;
+    font-weight: 100;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    ;
+}
+
+
+
+/*____|Navigation|_______________________________________________________________________________________*/
+
+nav {
+    height: var(--navbar-height);
+    background: var(--backgound-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoo {
+    height: var(--navbar-height);
+    width: auto;
+    margin-left: 20px;
+}
+
+nav .logo {
+    margin-left: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-variant: small-caps;
+    text-decoration: none;
+}
+
+nav ul {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+
+nav li {
+    height: 100%;
+    width: 150px;
+    text-align: center;
+    position: relative;
+}
+
+nav li:hover {
+    background: var(--accent-color);
+}
+
+nav ul a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.dropdown {
+    height: min-content;
+    width: 300px;
+    background: var(--backgound-color);
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: var(--navbar-height);
+}
+
+.dropdown li {
+    height: 70px;
+    width: 100%;
+}
+
+.dropdown li a {
+    justify-content: flex-end;
+    padding-left: 30px;
+    width: calc(100% - 30px);
+}
+
+nav li:hover .dropdown {
+    display: flex;
+}
+
+nav input[type="checkbox"] {
+    display: none;
+}
+
+.expandable_li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle_button {
+    width: 30px;
+    height: 23px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bar {
+    height: 4px;
+    width: 100%;
+    background: var(--text-color);
+    border-radius: 100px;
+}
+
+@media(max-width: 850px) {
+    .toggle_button {
+        display: flex;
+    }
+
+    nav ul {
+        height: min-content;
+        width: 100%;
+        background: var(--backgound-color);
+        display: none;
+        position: absolute;
+        top: var(--navbar-height);
+    }
+
+    nav li {
+        height: min-content;
+        width: 100%;
+    }
+
+    nav ul a {
+        padding: 30px 0;
+    }
+
+    .expandable_li {
+        display: block;
+    }
+
+    .expandable_li label {
+        padding: 30px 0;
+        cursor: pointer;
+        display: block;
+    }
+
+    .expandable_li:hover .dropdown {
+        display: none;
+    }
+
+    .expandable_li input[type="checkbox"]:checked~.dropdown {
+        display: block;
+    }
+
+    .dropdown {
+        position: static;
+        width: 100%;
+    }
+
+    .dropdown li {
+        padding: 0;
+        display: block;
+        position: static;
+        background: var(--darker-background-color);
+    }
+
+    .dropdown li a {
+        width: 100%;
+        padding: 0;
+        justify-content: center;
+    }
+
+    #toggle_button:checked~ul {
+        display: block;
+    }
+
+    .all {
+        display:block;
+        
+        
+    }
+    .save {
+        width: 100%;
+    }
+
+}
+
+
+
+/*____|Aktuelles Programm|______________________________________________________________________________________*/
+
+.aktuelles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: white;
+    padding-bottom: 40px;
+}
+
+.title {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    height: 56px;
+    width: auto;
+    display: flex;
+    background-color: var(--backgound-color);
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 10px;
+}
+
+.button:hover {
+    background-color: var(--darker-background-color);
+}
+
+.filmcover {
+    height: 300px;
+    width: 165px;
+    background-color: red;
+    cursor: pointer;
+}
+
+.filmcover-bild {
+    height: 82%;
+    width: auto;
+
+}
+.filmcover-bild img {
+    height: 100%;
+    width: 100%;
+ 
+}
+
+.filmcover-text {
+    height: 18%;
+    width: 100%;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+
+
+/*____|Trailershow|__________________________________________________________________________________________*/
+
+.trailershow {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    padding-bottom: 40px;
+}
+
+.trailershow-buttons {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.trailershow-buttons button {
+    width: 300px;
+}
+
+.trailershow-trailer {
+    width: 100%;
+    height: 500px;
+    background-color: black;
+    display: flex;
+}
+
+.trailershow-trailer video {
+    width: 82%;
+    height: auto;
+}
+
+.trailershow-trailermenü {
+    height: auto;
+    width: 18%;
+    background-color: red;
+    overflow: scroll;
+}
+
+.trailershow-trailercover {
+    width: 100%;
+    height: 48px;
+    background-color: green;
+    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.trailercover-bild {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(178, 197, 178);
+}
+
+.trailercover-text {
+    width: 70%;
+    height: auto;
+    background-color: rgb(1, 29, 78);
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+ 
+}
+
+
+
+/*____|Aktionen und Events|______________________________________________________________________________________*/
+
+.aktionen-events {
+    height: auto;
+    width: 100%;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.aktionen-beitrag {
+    height: auto;
+    width: 100%;
+    background-color: tomato;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.aktionen-beitrag button {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.aktionen-beitrag h2 {
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    ;
+    font-weight: 500;
+    font-variant: normal;
+    font-size: 28px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    border: none;
+}
+
+.aktionen-beitrag-text {
+    height: 400px;
+    width: 50%;
+    background-color: lightgrey;
+    padding: 60px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aktionen-beitrag-bild {
+    height: auto;
+    width: 50%;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.aktionen-beitrag-bild img {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(118, 118, 189);
+}
+
+
+
+/*____|Newsletter Abonnemont|_______________________________________________________________________________*/
+
+.newsletter-abonnement {
+    height: auto;
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.newsletter-abonnement-eingabefeld {
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 0.25rem;
+    padding-left: 20px;
+    padding-right: 300px;
+}
+
+
+
+/*____|Unsere Sponsoren|______________________________________________________________________________________*/
+
+.unsere-sponsoren {
+    height: auto;
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.unsere-sponsoren-bild {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unsere-sponsoren img {
+    height: 80px;
+    width: auto;
+    margin: 40px;
+}
+
+
+
+/*____|Footer|_______________________________________________________________________________________________*/
+
+.footer {
+    height: auto;
+    width: 100%;
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-bottom: 40px;
+}
+
+.footer h2 {
+    font-size: 20px;
+}
+
+.footer a {
+    font-size: 15px;
+}
+
+.footer-cild {
+    width: 25%;
+}
+
+.copyright {
+    width: 100%;
+    height: 40px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    background-color: white;
+    color: grey;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*____|Slideshow mit filminfos (Html auskommentiert weil es für verschiebungen sorgt.)|____________________________________________________________*/
+
+
+.body {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    background-color: red;
+}
+
+.content {
+    height: calc(100vh - 80px);
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.content .images {
+    height: 100%;
+    width: 100%;
+
+}
+
+.images img {
+    height: 100%;
+    width: 100%;
+
+}
+
+.btm-sliders {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    display: flex;
+    transform: translateX(-50%);
+}
+
+.btm-sliders span {
+    height: 15px;
+    width: 50px;
+    border: 2px solid white;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.btm-sliders span:hover {
+    background: white;
+}
+
+.content .slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.content .slide:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.slide span {
+    font-size: 35px;
+    color: white;
+    line-height: 41px;
+
+}
+
+.content .right {
+    right: 0;
+
+}
